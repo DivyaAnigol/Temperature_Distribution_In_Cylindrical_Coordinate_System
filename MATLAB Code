@@ -40,11 +40,13 @@ disp(b);
 T = A\b;
 disp(T);
 
-%% Plotting graph %%
-r = dr/2 : dr : R-dr/2;
+r_plot = [0  dr/2:dr:R-dr/2  R];
 
-plot(r,T,'-o','LineWidth',2);
-grid on;
-xlabel('Radius (m)');
-ylabel('Temperature (K)');
-title('Temperature Distribution in Cylinder');
+T_plot = [T(1); T; T_amb];
+
+plot(r_plot,T_plot,'-o','LineWidth',2)
+grid on
+xlabel('Radius (m)')
+ylabel('Temperature (K)')
+title('Temperature Distribution in Cylinder')
+xlim([0 R])
