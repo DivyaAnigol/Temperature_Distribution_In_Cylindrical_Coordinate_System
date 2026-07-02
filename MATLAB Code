@@ -1,6 +1,6 @@
 %% Dimensional Properties %%
 R = 1; % Radius of the cylinder (m)
-n = 4; % Number of nodes
+n = 10; % Number of nodes
 dr = R/n; % Element size (m)
 disp('dr = ');
 disp(dr);
@@ -41,8 +41,10 @@ T = A\b;
 disp(T);
 
 %% Plotting graph %%
+r = dr/2 : dr : R-dr/2;
 
-plot(dr,T, '-o');
+plot(r,T,'-o','LineWidth',2);
+grid on;
 xlabel('Radius (m)');
 ylabel('Temperature (K)');
-title('Temperature Distribution in Cylinder')
+title('Temperature Distribution in Cylinder');
